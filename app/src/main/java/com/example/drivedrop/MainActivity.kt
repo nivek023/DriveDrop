@@ -1,5 +1,7 @@
 package com.example.drivedrop
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,13 +12,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
-import com.example.drivedrop.entities.Car
-import com.example.drivedrop.entities.Chat
-import com.example.drivedrop.entities.Driver
-import com.example.drivedrop.entities.Owner
-import com.example.drivedrop.entities.Route
-import com.example.drivedrop.entities.Tour
-import com.example.drivedrop.entities.User
+import com.example.drivedrop.entities.*
+import com.example.drivedrop.login.LoginActivity
 import com.example.drivedrop.ui.theme.DriveDropAndroidTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,6 +21,7 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 
+@Suppress("UNCHECKED_CAST")
 class MainActivity : ComponentActivity() {
 
     private val db by lazy {
@@ -53,6 +51,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     )
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -323,5 +322,15 @@ class MainActivity : ComponentActivity() {
             chats.forEach { dao.upsertChat(it) }
         }
     }
+    private fun isLoggedIn(): Boolean {
+        val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        return isLoggedIn
+    }
 
+    private fun navigateToLoginActivity() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
