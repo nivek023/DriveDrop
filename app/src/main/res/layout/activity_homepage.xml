@@ -26,7 +26,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:background="#17FFFFFF"
-            android:hint="Dienstleistungen suchen" />
+            android:hint="Search" />
 
         <ImageView
             android:id="@+id/accountIdImage"
@@ -138,7 +138,7 @@
                 android:layout_width="125dp"
                 android:layout_height="160dp"
                 android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@drawable/sap"
                 android:background="@drawable/rounded_shape"
                 android:clipToOutline="true"/>
@@ -147,7 +147,7 @@
                 android:layout_width="125dp"
                 android:layout_height="160dp"
                 android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@drawable/sixt"
                 android:background="@drawable/rounded_shape"
                 android:clipToOutline="true"/>
