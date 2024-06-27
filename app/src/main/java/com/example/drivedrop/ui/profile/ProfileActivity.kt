@@ -11,9 +11,6 @@ import com.example.drivedrop.R
 import com.example.drivedrop.ui.homepage.HomepageActivity
 import com.example.drivedrop.UserDatabase
 import com.example.drivedrop.entities.User
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class ProfileActivity : AppCompatActivity() {
@@ -26,7 +23,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var driverLicenseInfoEditText: EditText
     private lateinit var bioEditText: EditText
 
-    @OptIn(DelicateCoroutinesApi::class)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserscreenBinding.inflate(layoutInflater)
@@ -60,8 +57,6 @@ class ProfileActivity : AppCompatActivity() {
             lifecycleScope.launch{
                 dao.upsertUser(user)
             }
-
-
 
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
