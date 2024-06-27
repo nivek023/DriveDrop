@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.drivedrop.databinding.ActivityUserscreenBinding
 import com.example.drivedrop.R
 import com.example.drivedrop.ui.homepage.HomepageActivity
@@ -41,6 +42,7 @@ class ProfileActivity : AppCompatActivity() {
 
         submitButton = findViewById(R.id.submit_button)
         submitButton.setOnClickListener {
+            val dao = UserDatabase.getInstance(this).dao
             val nameParts = nameEditText.text.toString().split(" ")
             val firstName = nameParts.getOrNull(0) ?: ""
             val lastName = nameParts.getOrNull(1) ?: ""
@@ -55,10 +57,11 @@ class ProfileActivity : AppCompatActivity() {
                 bio = bioEditText.text.toString()
             )
 
-            // Insert user into database
-            GlobalScope.launch(Dispatchers.IO) {
-                UserDatabase.getInstance(this@ProfileActivity).dao.upsertUser(user)
+            lifecycleScope.launch{
+                dao.upsertUser(user)
             }
+
+
 
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
