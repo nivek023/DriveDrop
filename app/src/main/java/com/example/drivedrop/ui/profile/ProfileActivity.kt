@@ -1,5 +1,6 @@
 package com.example.drivedrop.ui.profile
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -36,6 +37,10 @@ class ProfileActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.password_edit_text)
         driverLicenseInfoEditText = findViewById(R.id.driver_license_info_edit_text)
         bioEditText = findViewById(R.id.bio_edit_text)
+
+        val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
+        val email = sharedPreferences.getString("email", "")
+        emailEditText.setText(email)
 
         submitButton = findViewById(R.id.submit_button)
         submitButton.setOnClickListener {
