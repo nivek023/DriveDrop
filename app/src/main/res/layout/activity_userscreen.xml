@@ -1,37 +1,241 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <ImageButton
-        android:id="@+id/profilButton"
-        android:layout_width="60dp"
-        android:layout_height="61dp"
-        android:backgroundTint="#FFFDFD"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_circle_24dp_fill0_wght400_grad0_opsz24"
-        app:tint="#040404" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/NameView"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/textview_border"
-        android:fontFamily="sans-serif"
-        android:gravity="start"
-        android:hint="Name"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-        android:textColor="#808080"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilButton" />
+        <!-- Profile Image -->
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profile_image"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Edit Profile Image Text -->
+        <TextView
+            android:id="@+id/edit_profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile image"
+            android:textSize="14sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Profile Fields -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Name Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/name_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Helena Hills"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+            <!-- Username Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Username"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/username_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="username"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+            <!-- Email Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Email"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="name@domain.com"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:inputType="textEmailAddress"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+            <!-- Password Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Password"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/password_edit_text"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="password"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:inputType="textPassword"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+            <!-- Driver License Information Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Driver License Information"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/driver_license_info_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="input Information"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"/>
+            </LinearLayout>
+
+            <!-- Bio Field -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bio"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/bio_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="A description of this user."
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:background="@null" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eingaben bestätigen"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="32dp" />
+
+    </LinearLayout>
+
+</ScrollView>
