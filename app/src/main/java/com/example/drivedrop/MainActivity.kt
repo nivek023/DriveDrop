@@ -16,8 +16,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import com.example.drivedrop.databinding.ActivityLoginBinding
+import com.example.drivedrop.databinding.ActivityRegisterBinding
 import com.example.drivedrop.entities.*
 import com.example.drivedrop.login.LoginActivity
+import com.example.drivedrop.ui.profile.ProfileActivity
 import com.example.drivedrop.ui.theme.DriveDropAndroidTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,7 +29,9 @@ import kotlinx.coroutines.withContext
 
 @Suppress("UNCHECKED_CAST")
 class MainActivity : ComponentActivity() {
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityRegisterBinding
+    private lateinit var SignupButton: Button
+
     private val db by lazy {
         Room.databaseBuilder(
             applicationContext,
@@ -362,6 +366,16 @@ class MainActivity : ComponentActivity() {
             tours.forEach {dao.upsertTour(it)}
             chats.forEach { dao.upsertChat(it) }
         }
+
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        SignupButton = findViewById(R.id.signup_button)
+        SignupButton.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
     }
     private fun isLoggedIn(): Boolean {
         val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
