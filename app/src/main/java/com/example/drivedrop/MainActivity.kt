@@ -3,17 +3,21 @@ package com.example.drivedrop
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import android.widget.Button
 import androidx.activity.compose.setContent
+import androidx.activity.result.ActivityResultRegistry
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
+import com.example.drivedrop.databinding.ActivityRegisterBinding
 import com.example.drivedrop.entities.*
 import com.example.drivedrop.login.LoginActivity
+import com.example.drivedrop.profile.ProfileActivity
 import com.example.drivedrop.ui.theme.DriveDropAndroidTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,7 +26,9 @@ import kotlinx.coroutines.withContext
 
 
 @Suppress("UNCHECKED_CAST")
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
+    private lateinit var SignupButton: Button
 
     private val db by lazy {
         Room.databaseBuilder(
@@ -321,6 +327,16 @@ class MainActivity : ComponentActivity() {
             tours.forEach {dao.upsertTour(it)}
             chats.forEach { dao.upsertChat(it) }
         }
+
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        SignupButton = findViewById(R.id.signup_button)
+        SignupButton.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+
     }
     private fun isLoggedIn(): Boolean {
         val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
