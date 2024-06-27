@@ -17,7 +17,7 @@ import androidx.room.Room
 import com.example.drivedrop.databinding.ActivityRegisterBinding
 import com.example.drivedrop.entities.*
 import com.example.drivedrop.login.LoginActivity
-import com.example.drivedrop.profile.ProfileActivity
+import com.example.drivedrop.ui.profile.ProfileActivity
 import com.example.drivedrop.ui.theme.DriveDropAndroidTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
