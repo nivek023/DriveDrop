@@ -34,7 +34,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/account_circle_24dp_fill0_wght400_grad0_opsz24" />
+            android:src="@drawable/filter_image" />
     </LinearLayout>
 
     <LinearLayout
@@ -51,41 +51,46 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alles_anzeigen"
-            android:textAlignment="center"
-            android:textColor="#004344"
-            android:textColorLink="@color/cadet_blue"
-            android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="157dp"
+        android:contentDescription="Neue Angebote"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-        <ImageButton
-            android:id="@+id/autoButton"
-            android:layout_width="180dp"
-            android:layout_height="105dp"
-            android:background="@drawable/rounded_shape"
-            android:contentDescription="Fahrzeuge"
-            android:scaleType="centerInside"
-            android:src="@drawable/mercedes" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="170dp"
-            android:layout_height="105dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_shape"
-            android:src="@drawable/audi" />
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="226dp"
+                android:layout_height="105dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_shape"
+                android:src="@drawable/audi" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="226dp"
+                android:layout_height="105dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_shape"
+                android:src="@drawable/audi" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="264dp"
+                android:layout_height="105dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_shape"
+                android:src="@drawable/audi" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,16 +119,6 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="5dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alles_anzeigen"
-            android:textAlignment="center"
-            android:textColor="#004344"
-            android:textColorLink="@color/cadet_blue"
-            android:textStyle="bold" />
     </LinearLayout>
 
 
@@ -182,7 +177,6 @@
 
     </HorizontalScrollView>
 
-    <!-- New Services at DienstDirekt -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -195,17 +189,6 @@
             android:padding="16dp"
             android:text="Neue Angebote"
             android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/registrieren"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/alles_anzeigen"
-            android:textAlignment="center"
-            android:textColor="#004344"
-            android:textColorLink="@color/cadet_blue"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -223,25 +206,26 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="125dp"
+                android:layout_width="188dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/audi" />
 
             <ImageView
-                android:layout_width="135dp"
+                android:layout_width="192dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/bmw" />
 
             <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
+                android:layout_width="188dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:src="@drawable/tesla" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/audi" />
 
         </LinearLayout>
     </HorizontalScrollView>
