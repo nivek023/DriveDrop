@@ -4,20 +4,20 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.result.ActivityResultRegistry
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
-import com.example.drivedrop.databinding.ActivityRegisterBinding
+import com.example.drivedrop.databinding.ActivityLoginBinding
 import com.example.drivedrop.entities.*
 import com.example.drivedrop.login.LoginActivity
-import com.example.drivedrop.ui.profile.ProfileActivity
 import com.example.drivedrop.ui.theme.DriveDropAndroidTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,10 +26,8 @@ import kotlinx.coroutines.withContext
 
 
 @Suppress("UNCHECKED_CAST")
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRegisterBinding
-    private lateinit var SignupButton: Button
-
+class MainActivity : ComponentActivity() {
+    private lateinit var binding: ActivityLoginBinding
     private val db by lazy {
         Room.databaseBuilder(
             applicationContext,
@@ -57,16 +55,53 @@ class MainActivity : AppCompatActivity() {
             }
         }
     )
-
+    private lateinit var usernameInput: EditText
+    private lateinit var passwordInput: EditText
+    private lateinit var loginButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_login)
+        usernameInput = findViewById(R.id.username_input)
+        passwordInput = findViewById(R.id.password_input)
+        loginButton = findViewById(R.id.login_btn)
+
+
+        loginButton.setOnClickListener {
+            val username = usernameInput.text.toString()
+            val password = passwordInput.text.toString()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show()
+            } else {
+
+                if (username == "admin" && password == "admin") {
+                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+
+                } else {
+                    Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
+
+
+        // Check if the user is logged in
+        /*if (true) {
+            // If not, start LoginActivity
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            //finish() // Close MainActivity
+            //return
+        }
         setContent {
             DriveDropAndroidTheme {
                 val state by viewModel.state.collectAsState()
                 UserScreen(state = state, onEvent = viewModel::onEvent)
             }
-        }
+        }*/
         val dao = UserDatabase.getInstance(this).dao
         val users = listOf(
             User(
@@ -327,16 +362,6 @@ class MainActivity : AppCompatActivity() {
             tours.forEach {dao.upsertTour(it)}
             chats.forEach { dao.upsertChat(it) }
         }
-
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        SignupButton = findViewById(R.id.signup_button)
-        SignupButton.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-
     }
     private fun isLoggedIn(): Boolean {
         val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
