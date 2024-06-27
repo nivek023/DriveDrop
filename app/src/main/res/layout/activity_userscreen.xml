@@ -53,6 +53,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/name_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="Helena Hills"
@@ -83,6 +84,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/username_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="username"
@@ -113,6 +115,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/email_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="name@domain.com"
@@ -144,6 +147,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/password_edit_text"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:text="password"
@@ -175,6 +179,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/driver_license_info_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="input Information"
@@ -205,6 +210,7 @@
                     android:textColor="@android:color/black" />
 
                 <EditText
+                    android:id="@+id/bio_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
                     android:text="A description of this user."
