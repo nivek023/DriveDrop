@@ -25,13 +25,13 @@
             android:textAllCaps="true"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:text="Log into your account "/>
+            android:text="@string/loggen_sie_sich_in_ihr_account_ein"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:autofillHints=""
-            android:hint="Username oder Email"
+            android:hint="@string/benutzername_oder_email"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/password"
+            android:hint="@string/login_password"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="20sp"
@@ -54,7 +54,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
             android:padding="18dp"
@@ -80,6 +80,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="16dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/google_icon" />
 
             <ImageView
@@ -87,6 +88,7 @@
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:layout_margin="16dp"
+                android:importantForAccessibility="no"
                 android:src="@drawable/facebook_icon" />
 
         </LinearLayout>
@@ -95,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="91dp"
             android:layout_margin="5dp"
-            android:text="No Account?"
+            android:text="@string/login_no_account"
             android:textAlignment="center"
             android:textAllCaps="true" />
 
@@ -109,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#6A6C77"
-                android:text="Register here"
+                android:text="@string/registrieren"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>

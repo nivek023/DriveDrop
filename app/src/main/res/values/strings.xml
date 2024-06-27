@@ -1,15 +1,13 @@
 <resources>
-    <string name="app_name">DienstDirekt</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="google_login">Mit Google anmelden</string>
-    <string name="facebook_login">Mit Facebook anmelden</string>
+    <string name="app_name">DriveDrop</string>
     <string name="login_no_account">Kein Account? Jetzt registrieren</string>
-    <string name="login_as_guest">Als Gast fortfahren</string>
-    <string name="password_forgotten">Passwort vergessen</string>
-    <string name="button_description">Go to next page</string>
-    <string name="login_username">E-Mail oder Handynummer</string>
     <string name="login_password">Passwort</string>
+    <string name="password">Passwort</string>
+    <string name="login">Login</string>
     <string name="alles_anzeigen">Alles anzeigen</string>
+    <string name="or_continue_with_social_login">Oder mit Social Login einloggen:</string>
+    <string name="registrieren">Registrieren</string>
+    <string name="loggen_sie_sich_in_ihr_account_ein">Loggen Sie sich in Ihr Account ein</string>
+    <string name="benutzername_oder_email">Benutzername oder Email</string>
+    <string name="account_erstellen">Account erstellen</string>
 </resources>
