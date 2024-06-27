@@ -4,6 +4,7 @@
     <string name="login_password">Passwort</string>
     <string name="password">Passwort</string>
     <string name="login">Login</string>
+    <string name="alles_anzeigen">Alles anzeigen</string>
     <string name="or_continue_with_social_login">Oder mit Social Login einloggen:</string>
     <string name="registrieren">Registrieren</string>
     <string name="loggen_sie_sich_in_ihr_account_ein">Loggen Sie sich in Ihr Account ein</string>
