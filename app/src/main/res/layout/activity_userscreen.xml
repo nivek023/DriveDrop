@@ -56,7 +56,7 @@
                     android:id="@+id/name_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:text="Helena Hills"
+                    android:text="enter your name"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"
                     android:background="@null" />
@@ -87,7 +87,7 @@
                     android:id="@+id/username_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="48dp"
-                    android:text="username"
+                    android:text="enter username"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"
                     android:background="@null" />
@@ -150,7 +150,7 @@
                     android:id="@+id/password_edit_text"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:text="password"
+                    android:text="enter password"
                     android:textSize="16sp"
                     android:textColor="@android:color/black"
                     android:inputType="textPassword"
