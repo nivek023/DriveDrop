@@ -47,6 +47,9 @@ interface UserDAO {
     @Query("SELECT * FROM user ORDER BY userName ASC")
     fun getUserOrderedByUsername(): Flow<List<User>>
 
+    @Query("SELECT * FROM user WHERE id = :userId")
+    fun getUserById(userId: String): Flow<User>
+
     // Owner operations
     @Upsert
     suspend fun upsertOwner(owner: Owner)
