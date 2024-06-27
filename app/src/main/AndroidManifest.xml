@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="DriveDrop"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DriveDropAndroid"
+        android:theme="@style/Theme.DriveDropAndroidStyle"
         tools:targetApi="31">
         <activity android:name="com.example.drivedrop.MainActivity"
             android:exported="true">
@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".profile.ProfileActivity" />
     </application>
 
 </manifest>
