@@ -27,13 +27,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
-
+//Mainactivity solves the start of the App and defines entry page. Builds up database
 @Suppress("UNCHECKED_CAST")
 class MainActivity : ComponentActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var SignupButton: Button
     private lateinit var emailInput: EditText
 
+    //builds database
     private val db by lazy {
         Room.databaseBuilder(
             applicationContext,
@@ -41,7 +42,8 @@ class MainActivity : ComponentActivity() {
             "user_db"
         ).build()
     }
-
+    //reset database - for demo reasons the database fills at the start some data.
+    //to prevent it to get bigger with each test, cleaning
     private suspend fun resetDb() = withContext(Dispatchers.IO){
         db.runInTransaction{
             runBlocking {
@@ -91,24 +93,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-
-
-
-
-        // Check if the user is logged in
-        /*if (true) {
-            // If not, start LoginActivity
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            //finish() // Close MainActivity
-            //return
-        }
-        setContent {
-            DriveDropAndroidTheme {
-                val state by viewModel.state.collectAsState()
-                UserScreen(state = state, onEvent = viewModel::onEvent)
-            }
-        }*/
+        //creating data for database
         val dao = UserDatabase.getInstance(this).dao
         val users = listOf(
             User(
@@ -359,6 +344,8 @@ class MainActivity : ComponentActivity() {
                 ratings = "4.7"
             )
         )
+
+        //prefill database after clean up
         lifecycleScope.launch{
             resetDb()
             users.forEach{dao.upsertUser(it)}
@@ -389,16 +376,5 @@ class MainActivity : ComponentActivity() {
                 Toast.makeText(this, "Please enter an email address", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-    private fun isLoggedIn(): Boolean {
-        val sharedPreferences = getSharedPreferences("user_session", Context.MODE_PRIVATE)
-        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
-        return isLoggedIn
-    }
-
-    private fun navigateToLoginActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 }

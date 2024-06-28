@@ -13,7 +13,7 @@ import com.example.drivedrop.ui.homepage.HomepageActivity
 import com.example.drivedrop.UserDatabase
 import com.example.drivedrop.entities.User
 import kotlinx.coroutines.launch
-
+//building up profile activity to change and save the new profile
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding : ActivityUserscreenBinding
     private lateinit var submitButton: Button
@@ -48,7 +48,7 @@ class ProfileActivity : AppCompatActivity() {
             val nameParts = nameEditText.text.toString().split(" ")
             val firstName = nameParts.getOrNull(0) ?: ""
             val lastName = nameParts.getOrNull(1) ?: ""
-
+            //creating user for upload
             val user = User(
                 firstName = firstName,
                 lastName = lastName,
@@ -58,11 +58,11 @@ class ProfileActivity : AppCompatActivity() {
                 paymentInfo = driverLicenseInfoEditText.text.toString(),
                 bio = bioEditText.text.toString()
             )
-
+            //update to database
             lifecycleScope.launch{
                 dao.upsertUser(user)
             }
-
+            //routing to next activity
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
         }

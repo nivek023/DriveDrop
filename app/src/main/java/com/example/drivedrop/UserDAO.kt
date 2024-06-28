@@ -23,7 +23,8 @@ import com.example.drivedrop.entities.relations.OwnerWithRoutes
 import com.example.drivedrop.entities.relations.RouteWithDriverAndOwner
 import com.example.drivedrop.entities.relations.TourWithRouteAndDriverAndCar
 import kotlinx.coroutines.flow.Flow
-
+//Data Access Object of all defined Database accesses. Upsert and delete for any entity,
+// and for any relation
 @Dao
 interface UserDAO {
     //reset primarykey sequence

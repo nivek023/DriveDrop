@@ -4,6 +4,8 @@ import androidx.room.TypeConverter
 import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 
+// a converter to be able to store list<String> into the database
+// and get it back in the right format
 class Converter {
     private val gson = Gson()
     @TypeConverter

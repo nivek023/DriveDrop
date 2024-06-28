@@ -10,6 +10,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+//part of the old database testing (first increment) overview - adding user & using composable
+//defines logic of to add a new user - tracking events to route to next action
+
 @Composable
 fun AddUserDialog(
     state: UserState,

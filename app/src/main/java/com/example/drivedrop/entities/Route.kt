@@ -3,6 +3,7 @@ package com.example.drivedrop.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+////the entity class for the table Route
 @Entity
 data class Route (
     @PrimaryKey(autoGenerate = true)

@@ -6,6 +6,7 @@ import com.example.drivedrop.entities.Driver
 import com.example.drivedrop.entities.Owner
 import com.example.drivedrop.entities.Route
 
+// represents the relation of onw route that has a driver and an owner
 data class RouteWithDriverAndOwner(
     @Embedded val route: Route,
 

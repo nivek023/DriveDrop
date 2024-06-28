@@ -5,7 +5,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-
+// themes for for design - in extra class for easier maintenance
+// possible dark and light layout
 private val DarkColorPalette = darkColors(
     primary = Purple200,
     primaryVariant = Purple700,

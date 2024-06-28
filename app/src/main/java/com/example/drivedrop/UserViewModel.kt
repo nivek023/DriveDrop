@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
+// part of the old database testing (first increment) and being viewmodel for user
 @OptIn(ExperimentalCoroutinesApi::class)
 class UserViewModel(
     private val dao: UserDAO

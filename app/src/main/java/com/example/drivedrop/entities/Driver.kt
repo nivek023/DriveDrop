@@ -3,6 +3,7 @@ package com.example.drivedrop.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//the entity class for the table Driver
 @Entity
 data class Driver (
     @PrimaryKey(autoGenerate = true)

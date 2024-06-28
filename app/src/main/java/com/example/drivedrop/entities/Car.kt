@@ -3,7 +3,7 @@ package com.example.drivedrop.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
+//the entity class for the table Car.
 @Entity
 data class Car (
     @PrimaryKey(autoGenerate = false)

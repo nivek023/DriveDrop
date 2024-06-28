@@ -7,6 +7,8 @@ import com.example.drivedrop.entities.Driver
 import com.example.drivedrop.entities.Owner
 import com.example.drivedrop.entities.Tour
 
+
+//represents the relation between a car that has an owner, one driver and a tour
 data class ChatWithOwnerDriverAndTour(
     @Embedded val chat: Chat,
 

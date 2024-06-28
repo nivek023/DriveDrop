@@ -5,6 +5,7 @@ import androidx.room.Relation
 import com.example.drivedrop.entities.Owner
 import com.example.drivedrop.entities.Route
 
+//represents the relation between an owner and a route. An Owner can possibly have more than one.
 data class OwnerWithRoutes(
     @Embedded val owner: Owner,
 

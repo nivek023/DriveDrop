@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+//part of the old database testing (first increment). defining the screen
 @Composable
 fun UserScreen(
     state: UserState,

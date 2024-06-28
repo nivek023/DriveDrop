@@ -2,6 +2,7 @@ package com.example.drivedrop
 
 import com.example.drivedrop.entities.User
 
+//part of the old user testing setup (first increment)
 sealed interface UserEvent {
     object SaveUser : UserEvent
     data class SetFirstName(val firstName: String): UserEvent

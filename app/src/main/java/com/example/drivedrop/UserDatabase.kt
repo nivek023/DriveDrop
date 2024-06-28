@@ -12,7 +12,7 @@ import com.example.drivedrop.entities.Owner
 import com.example.drivedrop.entities.Route
 import com.example.drivedrop.entities.Tour
 import com.example.drivedrop.entities.User
-
+//database definition and get instance function
 @Database(
     entities = [
         User::class,

@@ -2,7 +2,7 @@ package com.example.drivedrop.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+//the entity class for the table Chat
 @Entity
 data class Chat (
     @PrimaryKey(autoGenerate = true)

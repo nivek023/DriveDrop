@@ -7,6 +7,7 @@ import com.example.drivedrop.entities.Driver
 import com.example.drivedrop.entities.Route
 import com.example.drivedrop.entities.Tour
 
+// represents the relation of a tour that has a rout, a driver and a car.
 data class TourWithRouteAndDriverAndCar(
     @Embedded val tour: Tour,
 

@@ -5,6 +5,7 @@ import androidx.room.Relation
 import com.example.drivedrop.entities.Driver
 import com.example.drivedrop.entities.Chat
 
+//represents the relation between driver and chats. Chats can take part multiple times.
 data class DriverWithChats(
     @Embedded val driver: Driver,
 

@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.drivedrop.MainActivity
 import com.example.drivedrop.R
-
+//class to define the build of the LoginActivity. Setting up the page on create
+// Defining the logic behind the buttons. Giving feedback on valid input.
+//Routing to next activity. Currently unused.
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var usernameInput: EditText
@@ -40,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+    //need to be used to route to Mainactivity
     private fun navigateToMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
