@@ -53,17 +53,28 @@
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign up with email"
+        android:text="@string/sign_up_with_email"
         android:layout_marginBottom="16dp"
         android:background="@android:color/black"
         android:textColor="@android:color/white" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:padding="18dp"
+        android:layout_marginTop="32dp"
+        android:textSize="12sp"
+        android:id="@+id/forgot_pw_btn"
+        />
     <!-- OR text -->
     <TextView
         android:id="@+id/or_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="or continue with"
+        android:text="@string/or_continue_with"
         android:layout_marginBottom="16dp"
         android:gravity="center"
         android:textColor="@android:color/black" />
@@ -87,7 +98,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Google"
+            android:text="@string/google"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
@@ -109,7 +120,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Facebook"
+            android:text="@string/facebook"
             android:textColor="@android:color/black" />
 
     </LinearLayout>
